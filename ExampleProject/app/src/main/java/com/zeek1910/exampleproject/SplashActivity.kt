@@ -12,8 +12,14 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
+        val userStorage = UserStorage(this)
+
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this, SignInActivity::class.java))
+            if (userStorage.getUser() == null) {
+                startActivity(Intent(this, SignInActivity::class.java))
+            } else {
+                startActivity(Intent(this, MainActivity::class.java))
+            }
             finish()
         }, 1000)
     }
