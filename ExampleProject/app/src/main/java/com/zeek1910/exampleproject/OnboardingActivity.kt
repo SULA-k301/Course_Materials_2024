@@ -1,0 +1,45 @@
+package com.zeek1910.exampleproject
+
+import android.os.Bundle
+import android.util.Log
+import android.widget.Button
+import android.widget.LinearLayout
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
+import androidx.viewpager2.widget.ViewPager2
+
+class OnboardingActivity : AppCompatActivity() {
+
+    private lateinit var viewPager: ViewPager2
+    private lateinit var buttonNext: TextView
+    private lateinit var buttonGetStarted: Button
+    private lateinit var bottomPanel: LinearLayout
+
+    private val onboardingAdapter = OnboardingAdapter()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_onboarding)
+
+        viewPager = findViewById(R.id.viewPager)
+        buttonNext = findViewById(R.id.buttonNext)
+        buttonGetStarted = findViewById(R.id.buttonGetStarted)
+        bottomPanel = findViewById(R.id.bottomPanel)
+        viewPager.adapter = onboardingAdapter
+
+        val appSettings = AppSettings(this)
+        appSettings.isShowOnboarding = false
+
+        buttonNext.setOnClickListener {
+            viewPager.currentItem++
+        }
+
+        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
+                buttonGetStarted.isVisible = position == 3
+            }
+        })
+    }
+}
