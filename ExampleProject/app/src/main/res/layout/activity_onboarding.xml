@@ -35,11 +35,18 @@
             android:text="Skip"
             android:textAlignment="center" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="18dp"
-            android:layout_weight="1"
-            android:background="@color/morning" />
+        <com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
+            android:id="@+id/dotsIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            app:dotsColor="@color/morning"
+            app:dotsCornerRadius="8dp"
+            app:dotsSize="11dp"
+            app:dotsSpacing="7dp"
+            app:dotsWidthFactor="2.5"
+            app:progressMode="true"
+            app:selectedDotColor="@color/eclipse" />
 
         <TextView
             android:id="@+id/buttonNext"

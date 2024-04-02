@@ -1,13 +1,13 @@
 package com.zeek1910.exampleproject
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.viewpager2.widget.ViewPager2
+import com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
 
 class OnboardingActivity : AppCompatActivity() {
 
@@ -15,6 +15,7 @@ class OnboardingActivity : AppCompatActivity() {
     private lateinit var buttonNext: TextView
     private lateinit var buttonGetStarted: Button
     private lateinit var bottomPanel: LinearLayout
+    private lateinit var dotsIndicator: SpringDotsIndicator
 
     private val onboardingAdapter = OnboardingAdapter()
 
@@ -26,7 +27,9 @@ class OnboardingActivity : AppCompatActivity() {
         buttonNext = findViewById(R.id.buttonNext)
         buttonGetStarted = findViewById(R.id.buttonGetStarted)
         bottomPanel = findViewById(R.id.bottomPanel)
+        dotsIndicator = findViewById(R.id.dotsIndicator)
         viewPager.adapter = onboardingAdapter
+        dotsIndicator.attachTo(viewPager)
 
         val appSettings = AppSettings(this)
         appSettings.isShowOnboarding = false
