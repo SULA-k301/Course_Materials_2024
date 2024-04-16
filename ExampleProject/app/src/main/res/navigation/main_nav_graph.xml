@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.zeek1910.exampleproject.ui.fragments.ProfileFragment"
+        android:label="ProfileFragment" />
+    <fragment
+        android:id="@+id/communityFragment"
+        android:name="com.zeek1910.exampleproject.ui.fragments.CommunityFragment"
+        android:label="CommunityFragment" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.zeek1910.exampleproject.ui.fragments.HomeFragment"
+        android:label="HomeFragment" />
+</navigation>

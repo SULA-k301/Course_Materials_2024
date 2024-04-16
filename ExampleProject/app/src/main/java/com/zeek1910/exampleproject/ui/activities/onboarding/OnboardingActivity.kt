@@ -1,4 +1,4 @@
-package com.zeek1910.exampleproject
+package com.zeek1910.exampleproject.ui.activities.onboarding
 
 import android.os.Bundle
 import android.widget.Button
@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.viewpager2.widget.ViewPager2
 import com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
+import com.zeek1910.exampleproject.data.AppSettings
+import com.zeek1910.exampleproject.R
 
 class OnboardingActivity : AppCompatActivity() {
 

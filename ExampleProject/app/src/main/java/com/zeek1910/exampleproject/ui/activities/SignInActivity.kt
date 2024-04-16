@@ -1,17 +1,14 @@
-package com.zeek1910.exampleproject
+package com.zeek1910.exampleproject.ui.activities
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.zeek1910.exampleproject.R
+import com.zeek1910.exampleproject.data.UserStorage
 
 class SignInActivity : AppCompatActivity() {
 

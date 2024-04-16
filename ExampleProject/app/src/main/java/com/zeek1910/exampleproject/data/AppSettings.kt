@@ -1,4 +1,4 @@
-package com.zeek1910.exampleproject
+package com.zeek1910.exampleproject.data
 
 import android.content.Context
 import androidx.core.content.edit

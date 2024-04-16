@@ -1,4 +1,4 @@
-package com.zeek1910.exampleproject
+package com.zeek1910.exampleproject.models
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes

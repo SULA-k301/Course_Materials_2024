@@ -1,4 +1,4 @@
-package com.zeek1910.exampleproject
+package com.zeek1910.exampleproject.ui.activities.onboarding
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.zeek1910.exampleproject.models.OnboardingItem
+import com.zeek1910.exampleproject.R
 
 class OnboardingAdapter : RecyclerView.Adapter<OnboardingAdapter.OnboardingViewHolder>() {
 

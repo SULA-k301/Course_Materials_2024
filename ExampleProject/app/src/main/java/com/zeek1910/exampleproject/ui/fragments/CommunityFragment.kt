@@ -1,22 +1,35 @@
-package com.zeek1910.exampleproject
+package com.zeek1910.exampleproject.ui.fragments
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.zeek1910.exampleproject.CommunityAdapter
+import com.zeek1910.exampleproject.R
+import com.zeek1910.exampleproject.models.CommunityItem
 
-class CommunityActivity : AppCompatActivity() {
+class CommunityFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
 
     private val communityAdapter = CommunityAdapter()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_community)
-        recyclerView = findViewById(R.id.recyclerView)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_community, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        recyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.adapter = communityAdapter
-        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         communityAdapter.setItems(createTestData() + createTestData() + createTestData())
     }
 
