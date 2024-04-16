@@ -43,7 +43,7 @@ class CommunityActivity : AppCompatActivity() {
                 name = "Alice",
                 timeAgo = "3 hours ago",
                 content = "Hello, this is my third post!",
-                likeCount = 30,
+                likeCount = 0,
                 commentCount = 15
             ),
             CommunityItem(
@@ -59,7 +59,7 @@ class CommunityActivity : AppCompatActivity() {
                 name = "Charlie",
                 timeAgo = "5 hours ago",
                 content = "Hello, this is my fifth post!",
-                likeCount = 50,
+                likeCount = 0,
                 commentCount = 25
             )
         )
